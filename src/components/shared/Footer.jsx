@@ -29,17 +29,17 @@ const footerLinks = [
 const socialLinks = [
     {
         label: "Facebook",
-        href: "https://facebook.com/",
+        href: "https://www.facebook.com/grafixlake",
         icon: LogoFacebook,
     },
     {
         label: "LinkedIn",
-        href: "https://linkedin.com/",
+        href: "https://www.linkedin.com/in/md-fahim-miah-b38621391/",
         icon: LogoLinkedin,
     },
     {
         label: "Email",
-        href: "mailto:hello@example.com",
+        href: "mailto:fahimhasan0867@gmail.com",
         icon: LogoAndroid,
     },
 ];

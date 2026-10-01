@@ -217,7 +217,7 @@ export default function Navbar() {
               {/* Mobile CTA */}
               <div className="p-5 border-t border-[var(--color-tutor-border)]">
                 <Link
-                  href="/book-trial"
+                  href="https://wa.me/8801609362941"
                   onClick={() => setIsMobileOpen(false)}
                   className="btn-primary w-full !rounded-[var(--radius-pill)] !py-3 gap-2"
                 >
