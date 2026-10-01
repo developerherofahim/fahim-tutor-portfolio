@@ -1,26 +1,529 @@
 @import "tailwindcss";
+@import "@heroui/styles";
+
+@theme {
+  /* Typography */
+  --font-tutor-display: var(--font-display);
+  --font-tutor-body: var(--font-body);
+  --font-tutor-bengali: var(--font-bengali);
+
+  /* Brand Colors — Deep Forest Green */
+  --color-tutor-primary-900: #286344;
+  --color-tutor-primary-800: #1F3F2D;
+  --color-tutor-primary-700: #2D653B;
+  --color-tutor-primary-500: #3A7A53;
+  --color-tutor-primary-soft: #EEF5F0;
+
+  /* Neutral & Academic Surfaces */
+  --color-tutor-background: #F7F6F3;
+  --color-tutor-surface: #FFFFFF;
+  --color-tutor-warm-surface: #F8EBE3;
+  --color-tutor-headings: #17201C;
+  --color-tutor-border: #DCD8DE;
+
+  /* Optional Accent — Warm Gold */
+  --color-tutor-gold: #C58B3A;
+  --color-tutor-gold-light: #F4E8D2;
+
+  /* Semantic */
+  --color-tutor-text: #17201C;
+  --color-tutor-text-secondary: #3A4A42;
+  --color-tutor-muted: #6B7A72;
+  --color-tutor-success: #2D653B;
+  --color-tutor-warning: #C58B3A;
+}
+
+
+/* =========================================================
+   ROOT DESIGN TOKENS
+========================================================= */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --------------------------------
+     Typography
+  -------------------------------- */
+
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-bengali: "Noto Sans Bengali", "Plus Jakarta Sans", system-ui, sans-serif;
+
+  /* --------------------------------
+     Typography Scale
+  -------------------------------- */
+
+  --text-display: 48px;
+  --text-h1: 36px;
+  --text-h2: 28px;
+  --text-h3: 22px;
+  --text-h4: 18px;
+
+  --text-lead: 20px;
+  --text-base: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+
+  /* --------------------------------
+     Line Heights
+  -------------------------------- */
+
+  --leading-display: 1.15;
+  --leading-heading: 1.25;
+  --leading-body: 1.6;
+  --leading-tight: 1.35;
+
+  /* --------------------------------
+     Letter Spacing
+  -------------------------------- */
+
+  --tracking-display: -0.02em;
+  --tracking-heading: -0.015em;
+  --tracking-body: 0;
+  --tracking-label: 0.04em;
+
+  /* --------------------------------
+     Border Radius
+  -------------------------------- */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+  --radius-pill: 999px;
+
+  /* --------------------------------
+     Shadows / Elevation
+  -------------------------------- */
+
+  --shadow-flat: none;
+  --shadow-1: 0 1px 3px rgba(23, 32, 28, 0.06),
+              0 1px 2px rgba(23, 32, 28, 0.04);
+  --shadow-2: 0 4px 12px rgba(23, 32, 28, 0.08),
+              0 2px 4px rgba(23, 32, 28, 0.04);
+
+  /* --------------------------------
+     Focus Ring (Accessibility)
+  -------------------------------- */
+
+  --focus-ring: 2px solid #286344;
+  --focus-ring-offset: 2px;
+
+  /* --------------------------------
+     Layout
+  -------------------------------- */
+
+  --container-max: 1280px;
+  --gutter: 32px;
+  --grid-columns: 12;
+
+  /* --------------------------------
+     Motion
+  -------------------------------- */
+
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================================================
+   BASE
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--color-tutor-background);
+  color: var(--color-tutor-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+section{
+  scroll-margin-top: 80px;
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-tutor-headings);
+  letter-spacing: var(--tracking-heading);
+  line-height: var(--leading-heading);
+}
+
+
+/* =========================================================
+   BODY TYPOGRAPHY
+========================================================= */
+
+p {
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: var(--leading-body);
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+  color: var(--color-tutor-primary-700);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+a:hover {
+  color: var(--color-tutor-primary-900);
+}
+
+
+/* =========================================================
+   BUTTONS & FORM ELEMENTS
+========================================================= */
+
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+
+/* =========================================================
+   TYPOGRAPHY UTILITIES
+========================================================= */
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-bengali {
+  font-family: var(--font-bengali);
+}
+
+
+/* Large display heading */
+
+.text-display {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 800;
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--color-tutor-headings);
+}
+
+
+/* Main page heading */
+
+.text-h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: 700;
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+}
+
+
+/* Section heading */
+
+.text-h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+}
+
+
+/* Lead / intro paragraph */
+
+.text-lead {
+  font-family: var(--font-body);
+  font-size: var(--text-lead);
+  font-weight: 500;
+  line-height: var(--leading-body);
+  color: var(--color-tutor-text-secondary);
+}
+
+
+/* Body text */
+
+.text-body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--leading-body);
+}
+
+
+/* Small uppercase label */
+
+.text-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background: var(--color-tutor-primary-soft);
+  color: var(--color-tutor-headings);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-tutor-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5C9C4;
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-tutor-primary-700);
+}
+
+
+/* =========================================================
+   RESPONSIVE TYPOGRAPHY
+========================================================= */
+
+@media (max-width: 768px) {
+  :root {
+    --text-display: 36px;
+    --text-h1: 28px;
+    --text-h2: 24px;
+    --text-h3: 20px;
+    --text-h4: 17px;
+    --text-lead: 18px;
+    --gutter: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --text-display: 30px;
+    --text-h1: 24px;
+    --text-h2: 20px;
+  }
+}
+
+
+/* =========================================================
+   UTILITY CLASSES
+========================================================= */
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Container */
+
+.container-tutor {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+
+/* =========================================================
+   BUTTON BASE STYLES (reference)
+========================================================= */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--color-tutor-primary-700);
+  color: white;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--duration-fast) ease,
+              transform var(--duration-fast) ease;
+}
+
+.btn-primary:hover {
+  background: var(--color-tutor-primary-900);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  background: #A8B5AD;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--color-tutor-primary-700);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  border: 1.5px solid var(--color-tutor-primary-700);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--duration-fast) ease,
+              color var(--duration-fast) ease;
+}
+
+.btn-secondary:hover {
+  background: var(--color-tutor-primary-soft);
+}
+
+.btn-secondary:disabled {
+  border-color: #C5C9C4;
+  color: #A8B5AD;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   CARD BASE
+========================================================= */
+
+.card {
+  background: var(--color-tutor-surface);
+  border: 1px solid var(--color-tutor-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+}
+
+.card-interactive {
+  transition: box-shadow var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
+}
+
+.card-interactive:hover {
+  box-shadow: var(--shadow-2);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   STATUS / FEEDBACK
+========================================================= */
+
+.badge-success {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--color-tutor-primary-soft);
+  color: var(--color-tutor-primary-800);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  border-radius: var(--radius-md);
+}
+
+.badge-warning {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--color-tutor-gold-light);
+  color: #8A5E1E;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  border-radius: var(--radius-md);
+}
+
+
+/* =========================================================
+   PROGRESS / TIMELINE (Teaching Method)
+========================================================= */
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.progress-step-number {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.progress-step.active .progress-step-number {
+  background: white;
+  color: var(--color-tutor-primary-800);
 }
