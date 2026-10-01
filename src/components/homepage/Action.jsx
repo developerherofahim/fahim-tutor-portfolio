@@ -95,7 +95,7 @@ export default function Action() {
                             {/* WhatsApp */}
                             <motion.a
                                 href="https://wa.me/8801609362941"
-                                target="_blank"
+                                target=""
                                 rel="noopener noreferrer"
                                 whileHover={
                                     shouldReduceMotion
@@ -124,35 +124,6 @@ export default function Action() {
                                     className="shrink-0 transition-transform duration-200 group-hover:translate-x-0.5"
                                 />
                             </motion.a>
-
-                            {/* Website */}
-                            <motion.div
-                                whileHover={
-                                    shouldReduceMotion
-                                        ? undefined
-                                        : { scale: 1.02 }
-                                }
-                                whileTap={
-                                    shouldReduceMotion
-                                        ? undefined
-                                        : { scale: 0.98 }
-                                }
-                                transition={{ duration: 0.18 }}
-                                className="w-full sm:w-auto"
-                            >
-                                <Link
-                                    href="/contact"
-                                    className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-[var(--radius-md)] border border-[var(--color-tutor-primary-700)] bg-white/70 px-5 text-sm font-semibold text-[var(--color-tutor-primary-700)] transition-[background-color,border-color,box-shadow] duration-200 hover:border-[var(--color-tutor-primary-900)] hover:bg-white hover:text-[var(--color-tutor-primary-900)] hover:shadow-[var(--shadow-1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-tutor-primary-900)] sm:min-w-[205px]"
-                                >
-                                    <CalendarCheck
-                                        size={17}
-                                        strokeWidth={2}
-                                        className="shrink-0"
-                                    />
-
-                                    <span>Book via Website</span>
-                                </Link>
-                            </motion.div>
                         </motion.div>
                     </div>
                 </motion.div>

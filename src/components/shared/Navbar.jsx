@@ -98,7 +98,7 @@ export default function Navbar() {
             {/* ── Desktop CTA ── */}
             <div className="hidden md:flex items-center gap-3">
               <Link
-                href="/book-trial"
+                href="https://wa.me/8801609362941"
                 className="btn-primary !rounded-[var(--radius-pill)] !px-5 !py-2.5 gap-2 shadow-sm hover:shadow-md"
               >
                 <BookOpen size={16} strokeWidth={2.25} />

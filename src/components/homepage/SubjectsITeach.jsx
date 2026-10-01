@@ -129,16 +129,6 @@ export default function SubjectsITeach() {
                   <p className="mt-2.5 flex-1 text-[var(--text-sm)] leading-[var(--leading-body)] text-[var(--color-tutor-text-secondary)]">
                     {subject.description}
                   </p>
-
-                  {/* Enquire link */}
-                  <div className="mt-6 flex items-center gap-1.5 text-[var(--text-sm)] font-semibold text-[var(--color-tutor-primary-700)] transition-colors duration-[var(--duration-fast)] group-hover:text-[var(--color-tutor-primary-900)]">
-                    <span>Enquire</span>
-                    <ArrowRight
-                      className="h-3.5 w-3.5 transition-transform duration-[var(--duration-normal)] group-hover:translate-x-1"
-                      strokeWidth={2.25}
-                      aria-hidden
-                    />
-                  </div>
                 </Link>
               </motion.article>
             );

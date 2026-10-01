@@ -90,7 +90,7 @@ export default function Footer() {
                     </motion.div>
 
                     {/* Navigation */}
-                    <nav
+                    {/* <nav
                         aria-label="Footer navigation"
                         className="order-3 md:order-2 md:hidden"
                     >
@@ -120,7 +120,7 @@ export default function Footer() {
                                 </motion.li>
                             ))}
                         </ul>
-                    </nav>
+                    </nav> */}
 
                     {/* Social + Back to top */}
                     <div className="order-2 flex items-center gap-3 md:order-3">
