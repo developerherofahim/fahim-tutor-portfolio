@@ -107,8 +107,7 @@ export default function SubjectsITeach() {
                 variants={itemVariants}
                 className="group relative"
               >
-                <Link
-                  href={subject.href}
+                <div
                   className="card card-interactive flex h-full flex-col p-6 md:p-7 focus-visible:outline-[var(--focus-ring)] focus-visible:outline-offset-[var(--focus-ring-offset)]"
                 >
                   {/* Icon */}
@@ -129,7 +128,7 @@ export default function SubjectsITeach() {
                   <p className="mt-2.5 flex-1 text-[var(--text-sm)] leading-[var(--leading-body)] text-[var(--color-tutor-text-secondary)]">
                     {subject.description}
                   </p>
-                </Link>
+                </div>
               </motion.article>
             );
           })}
